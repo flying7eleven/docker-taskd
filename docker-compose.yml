@@ -1,0 +1,13 @@
+version: '2'
+services:
+
+  taskserver:
+    container_name: taskserver
+    image: thuetz/taskd:latest
+    volumes:
+      - /home/user/docker-taskd/data:/var/lib/taskd
+    ports:
+      - "53589:53589"
+    environment:
+      - USER_GID=1001
+    restart: always
